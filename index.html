@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="calendar.css">
+</head>
+<body>
+
+    <h2 class="title" onclick="location.href='index.html'">C O N V E N I O T E</h2>
+
+    <div class="tab">
+        <a href="course1.html"><button class="tablinks" onclick="openCourse(event, 'course1')">C O U R S E 1</button></a>
+        <button class="tablinks" onclick="openCourse(event, 'course2')">C O U R S E 2</button>
+        <button class="tablinks" onclick="openCourse(event, 'course3')">C O U R S E 3</button>
+    </div>
+
+    <div id="default" class="tabcontent">
+        <h3 style="margin-top: 50px">O V E R V I E W </h3>
+
+        <div class="calendar">
+
+            <div class="col leftCol">
+                <div class="content">
+                    <h1 class="date">
+                        <script>
+                            const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                            document.write(monthNames[new Date().getMonth()]  + " " + new Date().getDate());
+                        </script>
+                    </h1>
+                    <div class="notes">
+                        <p>
+                            <input type="text" value="" placeholder="new note" />
+                            <a href="#" title="Add note" class="addNote animate">+</a>
+                        </p>
+                        <ul class="noteList">
+                            <li>Do Homework<a href="#" title="Remove note" class="removeNote animate">x</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col rightCol">
+                <div class="content">
+                    <h2 class="year">
+                        <script>document.write( new Date().getFullYear() );</script>
+                    </h2>
+                    <ul class="months">
+                        <li><a href="#" id="January" data-value="1">Jan</a></li>
+                        <li><a href="#" id="February" data-value="2">Feb</a></li>
+                        <li><a href="#" id="March" data-value="3">Mar</a></li>
+                        <li><a href="#" id="April" data-value="4">Apr</a></li>
+                        <li><a href="#" id="May" data-value="5">May</a></li>
+                        <li><a href="#" id="June" data-value="6">Jun</a></li>
+                        <li><a href="#" id="July" data-value="7">Jul</a></li>
+                        <li><a href="#" id="August" data-value="8">Aug</a></li>
+                        <li><a href="#" id="September" data-value="9">Sep</a></li>
+                        <li><a href="#" id="October" data-value="10">Oct</a></li>
+                        <li><a href="#" id="November" data-value="11">Nov</a></li>
+                        <li><a href="#" id="December" data-value="12">Dec</a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                    <ul class="weekday">
+                        <li><a href="#" title="Mon" data-value="1">Mon</a></li>
+                        <li><a href="#" title="Tue" data-value="2">Tue</a></li>
+                        <li><a href="#" title="Wed" data-value="3">Wed</a></li>
+                        <li><a href="#" title="Thu" data-value="4">Thu</a></li>
+                        <li><a href="#" title="Fri" data-value="5">Fri</a></li>
+                        <li><a href="#" title="Say" data-value="6">Sat</a></li>
+                        <li><a href="#" title="Sun" data-value="7">Sun</a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                    <ul class="days">
+                        <script>
+                            for( var _i = 1; _i <= 28; _i += 1 ){
+                            var _addClass = '';
+                            if( _i === new Date().getDate() ){ _addClass = ' class="selected"'; }
+
+                            switch( _i ){
+                            }
+
+                            document.write( '<li><a href="#" title="'+_i+'" data-value="'+_i+'"'+_addClass+'>'+_i+'</a></li>' );
+                            }
+
+                            document.getElementById(monthNames[new Date().getMonth()]).setAttribute("class", "selected");
+
+                        </script>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="calendarRight">
+            <div class="info">
+                C O U R S E • I N F O<br /><br />
+                Course 1 | T W @ 11:10am - 1:00pm<br />
+                Course 2 | M Th @ 5:35pm - 6:50pm<br />
+                Course 3 | M Th @ 7:00pm - 8:15pm<br />
+                <br /><hr /><br />
+            </div>
+
+            <div class="events">
+                Due Today: <br /><br />
+                <ul>• Course 1: homework</ul>
+                <ul>• Course 2: quiz</ul>
+                <ul>• Course 3: reading</ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="course1" class="tabcontent">
+        <h3>Course 1</h3>
+    </div>
+
+    <div id="course2" class="tabcontent">
+        <h3>Course 2</h3>
+    </div>
+
+    <div id="course3" class="tabcontent">
+        <h3>Course 3</h3>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

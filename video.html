@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="calendar.css">
+</head>
+<body>
+
+    <h2 class="title" onclick="location.href='index.html'">C O N V E N I O T E</h2>
+
+    <div class="tab">
+        <html>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <style>
+                .accordion {
+                    background-color: #eee;
+                    color: #444;
+                    cursor: pointer;
+                    width: 100%;
+                    border: none;
+                    text-align: left;
+                    outline: none;
+                    font-size: 15px;
+                    transition: 0.4s;
+                }
+
+                    .active, .accordion:hover {
+                        background-color: #ccc;
+                    }
+
+                .panel {
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    padding: 0 12px;
+                    display: none;
+                    overflow: hidden;
+                }
+            </style>
+        </head>
+        <body>
+
+            <h3 style="padding: 10px; font-weight:lighter; font-size: 17px" onclick="location.href='index.html'">C O U R S E 1</h3>
+
+            <button class="accordion">INFO</button>
+            <div class="panel">
+                <button onclick="location.href='course1.html'">OVERVIEW</button>
+                <button onclick="location.href='syllabus.html'">SYLLABUS</button>
+                <button onclick="location.href='grades.html'">GRADES</button>
+            </div>
+
+            <button class="accordion">NOTES</button>
+            <div class="panel">
+                <button onclick="location.href='notes.html'">LECTURE 1</button>
+            </div>
+
+            <button class="accordion active">RESOURCES</button>
+            <div class="panel" style="display: block">
+                <button class="active">VIDEOS</button>
+            </div>
+
+            <script>
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+
+                for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                panel.style.display = "none";
+                } else {
+                panel.style.display = "block";
+                }
+                });
+                }
+            </script>
+
+        </body>
+    </html>
+</div>
+
+<div id="default" class="tabcontent">
+    <h3 style="margin-top: 50px">V I D E O S</h3>
+    <iframe width="420" height="315"
+            src="https://www.youtube.com/watch?v=MwZwr5Tvyxo">
+    </iframe>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
