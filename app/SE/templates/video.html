@@ -1,9 +1,13 @@
-﻿<!DOCTYPE html>
+﻿{% load static %}
+{% load embed_video_tags %}
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="calendar.css">
+
+
+    <link rel="stylesheet" href="{%static 'styles.css'%}">
+    <link rel="stylesheet" href="{% static 'calendar.css'%}">
 </head>
 <body>
 
@@ -40,6 +44,7 @@
             </style>
         </head>
         <body>
+		
 
             <h3 style="padding: 10px; font-weight:lighter; font-size: 17px" onclick="location.href='index.html'">C O U R S E 1</h3>
 
@@ -83,9 +88,15 @@
 
 <div id="default" class="tabcontent">
     <h3 style="margin-top: 50px">V I D E O S</h3>
+	{% for i in obj %}
+	{% video i.video 'small'%}
+	{% endfor %}
+	
+	<!--
     <iframe width="420" height="315"
             src="https://www.youtube.com/watch?v=MwZwr5Tvyxo">
     </iframe>
+	-->
 
 </div>
 

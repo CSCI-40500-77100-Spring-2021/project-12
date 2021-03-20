@@ -2,8 +2,10 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="calendar.css">
+    {% load static %}
+
+    <link rel="stylesheet" href="{%static 'styles.css'%}">
+    <link rel="stylesheet" href="{% static 'calendar.css'%}">
 </head>
 <body>
 
@@ -83,7 +85,7 @@
 
 <div id="default" class="tabcontent">
     <h3 style="margin-top: 50px">G R A D E S</h3>
-    <img style="width:40%; margin-top:20px; margin-left:20px; float:left"src="graph.png">
+    <img style="width:40%; margin-top:20px; margin-left:20px; float:left"src="{%static 'graph.png'%}">
     <p style="text-align:left; margin-left: 450px; margin-top: 50px; line-height:1.6">
         Current Grade: 92.5%<br /><br />
         Homework<br />
