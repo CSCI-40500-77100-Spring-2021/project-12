@@ -19,10 +19,10 @@ from SE import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/index.html', views.home_page, name='home'),
-    path('home/course1.html', views.course1, name='course1'),
-    path('home/video.html', views.video, name='video'),
-    path('home/grades.html', views.grades, name='grades'),
-    path('home/notes.html', views.notes, name='notes'),
-    path('home/syllabus.html', views.syllabus, name='syllabus'),
+    path('conveniote/index', views.home_page, name='home'),
+    path('conveniote/course1', views.course1, name='course1'),
+    path('conveniote/video', views.video, name='video'),
+    path('conveniote/grades', views.grades, name='grades'),
+    path('conveniote/notes', views.notes, name='notes'),
+    path('conveniote/syllabus', views.syllabus, name='syllabus'),
 ]
