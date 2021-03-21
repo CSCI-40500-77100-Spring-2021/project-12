@@ -1,8 +1,11 @@
 Group #12
 Project: Conveniote
-Group Members: Samuel Khong, Rachel Tan, Manal Zneit
+Group Members: Samuel Khong (samdundun), Rachel Tan (RachelTan07 / raycheli), Manal Zneit (mZneit)
 
-Running the project: open index.html in your web browser
+Running the project:
+- install django:  python -m pip install Django
+- cd into app and run: python manage.py runserver
+- site will be running at: http://localhost:8000/conveniote/index.html
 
 Conveniote is a convenient note taking app for educators and students. Users can create courses to keep track of their notes, deadlines, resources, and course information. Users can also create their own custom sections to store any other information they would like as well.
 
