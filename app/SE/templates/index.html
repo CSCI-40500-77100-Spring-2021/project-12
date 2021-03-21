@@ -12,10 +12,18 @@
 
     <h2 class="title" onclick="location.href='index.html'">C O N V E N I O T E</h2>
 
-    <div class="tab">
-        <a href="course1.html"><button class="tablinks" onclick="openCourse(event, 'course1')">C O U R S E 1</button></a>
-        <button class="tablinks" onclick="openCourse(event, 'course2')">C O U R S E 2</button>
-        <button class="tablinks" onclick="openCourse(event, 'course3')">C O U R S E 3</button>
+    <div id = "courselist" class="tab">
+        <a href="course1.html"><button onclick="openCourse(event, this)" oncontextmenu="erase(this)">Course 1</button></a>
+
+        <!-- <div class="tablinks" style="display: flex" onclick=erase(this)>
+            <a href="course1.html" style="width: 150px; justify-content: flex-start;"><button onclick="openCourse(event, this)" oncontextmenu="erase(this)">Course 1</button></a>
+            <button style="width: 30px; justify-content: flex-end;">x</button>
+        </div> -->
+
+
+        <!-- <button class="tablinks" onclick="openCourse(event, 'course2')">C O U R S E 2</button>
+        <button class="tablinks" onclick="openCourse(event, 'course3')">C O U R S E 3</button> -->
+        <button class="tablinks" onclick="addCourse()" style="text-align: center; color: grey">+ Create Course</button>
     </div>
 
     <div id="default" class="tabcontent">
@@ -113,6 +121,7 @@
         </div>
     </div>
 
+    <!-- 
     <div id="course1" class="tabcontent">
         <h3>Course 1</h3>
     </div>
@@ -124,7 +133,37 @@
     <div id="course3" class="tabcontent">
         <h3>Course 3</h3>
     </div>
+    -->
 
-    <script src="script.js"></script>
+    <script>
+    var num = 2;
+
+    function erase($this){
+        $this.remove();
+    }
+
+    function addCourse(){
+        var course = prompt("Please enter your course:", "Course Name");
+        if (course == null || course == "") {
+        }else{
+            var newCourse = document.createElement("BUTTON");
+            newCourse.innerHTML = course;
+            newCourse.oncontextmenu = function(){
+                this.remove();
+            }
+            newCourse.onclick = function(){
+                document.getElementById("default").innerHTML = course;
+                newCourse += "active";
+            }
+            var courselist = document.getElementById("courselist");
+            courselist.insertBefore(newCourse, courselist.childNodes[num]);
+            num++;
+
+
+        }
+    }
+
+    
+    </script>
 </body>
 </html>

@@ -14,6 +14,21 @@ function openCourse(evt, courseName){
     evt.currentTarget.className += " active";
 }
 
+function test(){
+    console.log("anything");
+}
+
+var courseNum = 2;
+function addCourse(){
+    var txt;
+    var person = prompt("Please enter your name:", "Harry Potter");
+    if (person == null || person == "") {
+        txt = "User cancelled the prompt.";
+    } else {
+        txt = "Hello " + person + "! How are you today?";
+    }
+}
+
 
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("default").click();
