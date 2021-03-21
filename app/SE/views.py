@@ -20,3 +20,23 @@ def notes(request):
 
 def syllabus(request):
         return render(request, 'syllabus.html')
+
+def add_video_form_submission(request):
+        obj=Item.objects.all()
+        video_name = request.POST['url']
+        video = Item(video = video_name)
+        video.save()
+        return render(request, 'video.html',{'obj':obj})
+
+def remove_video(request):
+        obj=list(Item.objects.all())
+        video_name = request.POST['remove']
+        idx = 0
+        for video in obj:
+                if(str(video) == str(video_name)):
+                        break
+                idx+=1
+        list(Item.objects.all()).pop(idx)
+        obj.pop(idx)
+        Item.objects.all()[idx].delete()
+        return render(request, 'video.html',{'obj':obj})

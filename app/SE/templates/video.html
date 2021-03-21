@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <h2 class="title" onclick="location.href='index.html'">C O N V E N I O T E</h2>
+    <h2 class="title" onclick="location.href='/conveniote/index'">C O N V E N I O T E</h2>
 
     <div class="tab">
         <html>
@@ -39,25 +39,27 @@
                     margin-bottom: 10px;
                     padding: 0 12px;
                     display: none;
-                    overflow: hidden;
                 }
+				.remove{
+					visibility: hidden;
+				}
             </style>
         </head>
         <body>
 		
 
-            <h3 style="padding: 10px; font-weight:lighter; font-size: 17px" onclick="location.href='index.html'">C O U R S E 1</h3>
+            <h3 style="padding: 10px; font-weight:lighter; font-size: 17px" onclick="location.href='/conveniote/index'">C O U R S E 1</h3>
 
             <button class="accordion">INFO</button>
             <div class="panel">
-                <button onclick="location.href='course1.html'">OVERVIEW</button>
-                <button onclick="location.href='syllabus.html'">SYLLABUS</button>
-                <button onclick="location.href='grades.html'">GRADES</button>
+                <button onclick="location.href='/conveniote/course1'">OVERVIEW</button>
+                <button onclick="location.href='/conveniote/syllabus'">SYLLABUS</button>
+                <button onclick="location.href='/conveniote/grades'">GRADES</button>
             </div>
 
             <button class="accordion">NOTES</button>
             <div class="panel">
-                <button onclick="location.href='notes.html'">LECTURE 1</button>
+                <button onclick="location.href='/conveniote/notes'">LECTURE 1</button>
             </div>
 
             <button class="accordion active">RESOURCES</button>
@@ -90,8 +92,21 @@
     <h3 style="margin-top: 50px">V I D E O S</h3>
 	{% for i in obj %}
 	{% video i.video 'small'%}
+	<form action="/conveniote/remove_video/" method="post">
+	{%csrf_token%}
+	<input type="text" class = "remove" id="remove" name="remove" value = "{{i}}"></input>
+	<br>
+	<input type="submit" name = {{i.video}} value = "Remove"></input>
+	</form>
+	<br>
 	{% endfor %}
-	
+	<br><br>
+	<form action="/conveniote/add_video_form_submssion/" method="post">
+	{%csrf_token%}
+	<label for="url">Video:</label>
+	<input type="text" id="url" name="url"><br><br>
+	<input type="submit" value="Submit">
+	</form>
 	<!--
     <iframe width="420" height="315"
             src="https://www.youtube.com/watch?v=MwZwr5Tvyxo">
