@@ -40,3 +40,9 @@ def remove_video(request):
         obj.pop(idx)
         Item.objects.all()[idx].delete()
         return render(request, 'video.html',{'obj':obj})
+
+def assignment_form(request):
+        return render(request, 'assignment_form.html')
+
+def evaluation_form(request):
+        return render(request, 'evaluation_form.html')
