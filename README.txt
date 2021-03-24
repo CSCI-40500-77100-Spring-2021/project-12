@@ -4,6 +4,7 @@ Group Members: Samuel Khong (samdundun), Rachel Tan (RachelTan07 / raycheli), Ma
 
 Running the project:
 - install django:  python -m pip install Django
+- install video embed: pip install django-embed-video
 - cd into app and run: python manage.py runserver
 - site will be running at: http://localhost:8000/conveniote/index.html
 
