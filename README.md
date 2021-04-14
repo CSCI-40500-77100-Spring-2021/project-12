@@ -19,7 +19,7 @@ Additional Features:
 - install django: `python -m pip install Django`
 - install video embed: `python install django-embed-video`
 - cd into app and run: `python manage.py runserver`
-- site will be running at: http://localhost:8000/conveniote/index.html
+- site will be running at: http://localhost:8000/conveniote/index
 
 ## Software Architecture
 
