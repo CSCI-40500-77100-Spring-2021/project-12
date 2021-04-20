@@ -1,4 +1,4 @@
-# Conveniote
+## Conveniote
 
 Group Members: Samuel Khong (samdundun), Rachel Tan (RachelTan07 / raycheli, Manal Zneit (mZneit)
 
@@ -47,7 +47,7 @@ Additional Features:
 - Open Source: N/A
 - Development Tools: Python + Django
 
-## [Docker](#docker)
+## Docker
 
 - obtain docker image: `docker pull rltan1034/project-12`
 - build image: `docker run -p 8000:8000 rltan1034/project-12`
