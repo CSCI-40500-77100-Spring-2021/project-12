@@ -49,6 +49,6 @@ Additional Features:
 
 ## Docker
 
-Obtain docker image: `docker pull rltan1034/project-12`
-Build image: `docker run -p 8000:8000 rltan1034/project-12`
-Project will be available on: http://localhost:8000/conveniote/index
+- obtain docker image: `docker pull rltan1034/project-12`
+- build image: `docker run -p 8000:8000 rltan1034/project-12`
+- project will be available on: http://localhost:8000/conveniote/index
