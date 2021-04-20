@@ -47,7 +47,7 @@ Additional Features:
 - Open Source: N/A
 - Development Tools: Python + Django
 
-## Docker
+## [Docker](#docker)
 
 - obtain docker image: `docker pull rltan1034/project-12`
 - build image: `docker run -p 8000:8000 rltan1034/project-12`
