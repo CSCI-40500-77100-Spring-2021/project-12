@@ -29,5 +29,8 @@ urlpatterns = [
     path('conveniote/add_video_form_submssion/', views.add_video_form_submission, name = "addvideo"),
     path('conveniote/remove_video/', views.remove_video, name = "removevideo"),
     path('conveniote/assignment', views.assignment_form, name='assignment_form'),
-    path('conveniote/evaluation', views.evaluation_form, name='evaluation_form')
+    path('conveniote/evaluation', views.evaluation_form, name='evaluation_form'),
+    path('conveniote/login', views.login_page, name='login'),
+    path('conveniote/register', views.register, name='register'),
+
 ]
