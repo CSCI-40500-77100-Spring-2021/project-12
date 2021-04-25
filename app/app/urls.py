@@ -21,6 +21,7 @@ urlpatterns = [
     path('', views.home_page),
     path('admin/', admin.site.urls),
     path('conveniote/index', views.home_page, name='home'),
+    path('conveniote/home', views.front_page, name='front'),
     path('conveniote/course1', views.course1, name='course1'),
     path('conveniote/video', views.video, name='video'),
     path('conveniote/grades', views.grades, name='grades'),

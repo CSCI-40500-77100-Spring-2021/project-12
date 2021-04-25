@@ -8,6 +8,9 @@ from django.contrib.auth import authenticate, login, logout
 def home_page(request):
 	return render(request, 'index.html')
 
+def front_page(request):
+	return render(request, 'home.html')
+
 def course1(request):
         return render(request, 'course1.html')
 
