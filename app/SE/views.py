@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .models import Item
 from django.contrib.auth.forms import UserCreationForm
-from .forms import CreateUserForm
+from .forms import CreateUserForm, AssignmentForm, NotesForm
 from django.contrib.auth import authenticate, login, logout
 
 def home_page(request):
@@ -20,9 +20,6 @@ def video(request):
 
 def grades(request):
         return render(request, 'grades.html')
-
-def notes(request):
-        return render(request, 'notes.html')
 
 def syllabus(request):
         return render(request, 'syllabus.html')
@@ -48,7 +45,21 @@ def remove_video(request):
         return render(request, 'video.html',{'obj':obj})
 
 def assignment_form(request):
-        return render(request, 'assignment_form.html')
+        if request.method == 'POST':
+                form = AssignmentForm(request.POST)
+                if form.is_valid():
+                        form = form.save()
+        else:
+                form = AssignmentForm()
+        
+        return render(request, 'assignment_form.html', {'form':form})
+
+def notes_form(request):
+        if request.method == 'POST':
+                form = NotesForm(request.POST)
+                if form.is_valid():
+                        form = form.save()       
+        return render(request, 'notes.html')
 
 def evaluation_form(request):
         return render(request, 'evaluation_form.html')
