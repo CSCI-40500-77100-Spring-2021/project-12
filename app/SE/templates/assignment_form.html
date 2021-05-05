@@ -216,24 +216,20 @@
   </head>
   <body>
     <div class="testbox">
-      <form action="/">
-        
-        
-        
-       
-    
+      <form action="{% url 'assignment_form' %}" method="post">
+        {%csrf_token%}
         <div class="card">
-  <div class="card-header">
-  </div>
-  <div class="card-body">
-    <h2 class="card-title">Assignment Information</h3>
-   <h3> <p class="card-text">Read Chapter 1 and solve exercises 1.1, 1.5, and 1.9.</p></h3>
-   <h3> <p class="card-text">Grading Rubric: /100</p></h3>
-   <h3> <p class="card-text">Due Date: 4/13/2021</p></h3>
-    <a href="#" class="btn btn-primary">View assignment</a>
-  <br>
-</div>
-<br>
+          <div class="card-header">
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">Assignment Information</h3>
+           <h3> <p class="card-text">Read Chapter 1 and solve exercises 1.1, 1.5, and 1.9.</p></h3>
+           <h3> <p class="card-text">Grading Rubric: /100</p></h3>
+           <h3> <p class="card-text">Due Date: 4/13/2021</p></h3>
+            <a href="#" class="btn btn-primary">View assignment</a>
+          <br>
+        </div>
+        <br>
         <div class="form-group">
             <label for="exampleFormControlSelect1">What platform did you use for this assignment?</label>
             <select class="form-control" id="exampleFormControlSelect1" name="platform" required="required">
@@ -249,20 +245,20 @@
           </div>
         <div class="item">
           <p>Write Submission</p>
-          <textarea rows="5"></textarea>
+          <textarea class="form-control" rows="5" name="written_submission"> </textarea>
         </div>
         
         <div class="item preferred-metod">
           <p>Preferred method of contact</p>
           <div class="preferred-metod-item">
-            <label><input type="checkbox" name="name"> <span>Email</span></label>
-            <label><input type="checkbox" name="name"> <span>Slack</span></label>
-            <label><input type="checkbox" name="name"> <span>Conveniote</span></label>
+            <label><input type="checkbox" name="contact_method_email"> <span>Email</span></label>
+            <label><input type="checkbox" name="contact_method_slack"> <span>Slack</span></label>
+            <label><input type="checkbox" name="contact_method_conveniote"> <span>Conveniote</span></label>
           </div>
         </div>
         <div class="item">
           <p>Comments</p>
-          <textarea rows="5"></textarea>
+          <textarea rows="5" name="comment"></textarea>
         </div>
         <div class="btn-block">
           <button type="submit" href="#">SUBMIT</button>
@@ -270,11 +266,8 @@
 
       </form>
     </div>
-    <div class="col-md-6 offset-md-3 mt-5">
-       
-        <br>
-        
-        
+    <div class="col-md-6 offset-md-3 mt-5">      
+        <br>    
     </div> 
 </div>
 
