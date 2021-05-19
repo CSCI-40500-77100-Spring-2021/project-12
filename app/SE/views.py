@@ -24,6 +24,9 @@ def grades(request):
 def syllabus(request):
         return render(request, 'syllabus.html')
 
+def tos(request):
+        return render(request, 'tos.html')
+
 def add_video_form_submission(request):
         obj=Item.objects.all()
         video_name = request.POST['url']

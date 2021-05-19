@@ -18,5 +18,6 @@ urlpatterns = [
     path('conveniote/evaluation', views.evaluation_form, name='evaluation_form'),
     path('conveniote/login', views.login_page, name='login'),
     path('conveniote/register', views.register, name='register'),
+    path('conveniote/tos', views.tos, name='tos')
 
 ] 
