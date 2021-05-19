@@ -19,4 +19,4 @@ urlpatterns = [
     path('conveniote/login', views.login_page, name='login'),
     path('conveniote/register', views.register, name='register'),
 
-]
+] 
