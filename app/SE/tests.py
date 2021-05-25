@@ -1,6 +1,5 @@
 from django.test import TestCase
 from django.test import Client
-from django.conf import settings
 from django.template.loader import render_to_string
 from SE.models import Assignment
 from SE.forms import AssignmentForm
