@@ -1,0 +1,276 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{%static 'styles.css'%}">
+    <link rel="stylesheet" href="{% static 'calendar.css'%}">
+</head>
+<body>
+
+    <h2 class="title" onclick="location.href='index'">C O N V E N I O T E</h2>
+
+    <div class="tab">
+        <html>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <style>
+                .accordion {
+                    background-color: #eee;
+                    color: #444;
+                    cursor: pointer;
+                    width: 100%;
+                    border: none;
+                    text-align: left;
+                    outline: none;
+                    font-size: 15px;
+                    transition: 0.4s;
+                }
+
+                    .active, .accordion:hover {
+                        background-color: #ccc;
+                    }
+
+                .panel {
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    padding: 0 12px;
+                    display: none;
+                    overflow: hidden;
+                }
+            </style>
+        </head>
+        <body>
+
+            <h3 style="padding: 10px; font-weight:lighter; font-size: 17px" onclick="location.href='index'">C O U R S E 1</h3>
+
+            <button class="accordion active">INFO</button>
+            <div class="panel" style="display: block">
+                <button onclick="location.href='course1'">OVERVIEW</button>
+                <button onclick="location.href='syllabus'">SYLLABUS</button>
+                <button onclick="location.href='grades'">GRADES</button>
+                <button class="active">ASSIGNMENTS</button>
+            </div>
+
+            <button class="accordion">NOTES</button>
+            <div class="panel">
+                <button onclick="location.href='notes'">LECTURE 1</button>
+            </div>
+
+            <button class="accordion">RESOURCES</button>
+            <div class="panel">
+                <button onclick="location.href='video'">VIDEOS</button>
+            </div>
+
+            <button class="accordion">EVALUATION</button>
+            <div class="panel">
+                <button onclick="location.href='evaluation'">EVALUATION</button>
+            </div>
+
+            <script>
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+
+                for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                panel.style.display = "none";
+                } else {
+                panel.style.display = "block";
+                }
+                });
+                }
+            </script>
+
+        </body>
+    </html>
+</div>
+
+<div id="default" class="tabcontent">
+    <h3 style="margin-top: 50px">A S S I G N M E N T</h3>
+       <style>
+      html, body {
+      min-height: 100%;
+      }
+      body, div, form, input, select, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+      }
+      h1 {
+      margin: 15px 0;
+      font-weight: 400;
+      }
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 3px;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 2px 5px #ccc; 
+      }
+      input, select, textarea {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      }
+      select {
+      width: 100%;
+      padding: 7px 0;
+      background: transparent;
+      }
+      textarea {
+      width: calc(100% - 6px);
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      .item:hover p, .item:hover i {
+      color: #095484;
+      }
+      input:hover, select:hover, textarea:hover, .preferred-metod label:hover input {
+      box-shadow: 0 0 5px 0 #095484;
+      }
+      .preferred-metod label {
+      display: block;
+      margin: 5px 0;
+      }
+      .preferred-metod:hover input {
+      box-shadow: none;
+      }
+      .preferred-metod-item input, .preferred-metod-item span {
+      width: auto;
+      vertical-align: middle;
+      }
+      .preferred-metod-item input {
+      margin: 0 5px 0 0;
+      }
+      input[type="date"]::-webkit-inner-spin-button {
+      display: none;
+      }
+      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      font-size: 20px;
+      color: #a9a9a9;
+      }
+      .item i {
+      right: 1%;
+      top: 30px;
+      z-index: 1;
+      }
+      [type="date"]::-webkit-calendar-picker-indicator {
+      right: 0;
+      z-index: 2;
+      opacity: 0;
+      cursor: pointer;
+      }
+      .btn-block {
+      margin-top: 20px;
+      text-align: center;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;      
+      -webkit-border-radius: 5px; 
+      -moz-border-radius: 5px; 
+      border-radius: 5px; 
+      background-color: #095484;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background-color: #0666a3;
+      }
+      @media (min-width: 568px) {
+      .name-item, .city-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .name-item input, .city-item input {
+      width: calc(50% - 20px);
+      }
+      .city-item select {
+      width: calc(50% - 8px);
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="testbox">
+      <form action="{% url 'assignment_form' %}" method="post">
+        {%csrf_token%}
+        <div class="card">
+          <div class="card-header">
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">Assignment Information</h3>
+           <h3> <p class="card-text">Read Chapter 1 and solve exercises 1.1, 1.5, and 1.9.</p></h3>
+           <h3> <p class="card-text">Grading Rubric: /100</p></h3>
+           <h3> <p class="card-text">Due Date: 4/13/2021</p></h3>
+            <a href="#" class="btn btn-primary">View assignment</a>
+          <br>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">What platform did you use for this assignment?</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="platform" required="required">
+              <option>Github</option>
+              <option>Gitlab</option>
+              <option>Bitbucket</option>
+            </select>
+          </div>
+          <br>
+          <div class="form-group mt-3">
+            <label class="mr-2">Upload File:</label>
+            <input type="file" name="file">
+          </div>
+        <div class="item">
+          <p>Write Submission</p>
+          <textarea class="form-control" rows="5" name="written_submission"> </textarea>
+        </div>
+        
+        <div class="item preferred-metod">
+          <p>Preferred method of contact</p>
+          <div class="preferred-metod-item">
+            <label><input type="checkbox" name="contact_method_email"> <span>Email</span></label>
+            <label><input type="checkbox" name="contact_method_slack"> <span>Slack</span></label>
+            <label><input type="checkbox" name="contact_method_conveniote"> <span>Conveniote</span></label>
+          </div>
+        </div>
+        <div class="item">
+          <p>Comments</p>
+          <textarea rows="5" name="comment"></textarea>
+        </div>
+        <div class="btn-block">
+          <button type="submit" href="#">SUBMIT</button>
+        </div>
+
+      </form>
+    </div>
+    <div class="col-md-6 offset-md-3 mt-5">      
+        <br>    
+    </div> 
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
