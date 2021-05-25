@@ -62,7 +62,7 @@ def notes_form(request):
                 form = NotesForm(request.POST)
                 if form.is_valid():
                         form = form.save()       
-        return render(request, 'notes.html')
+        return render(request, 'notes.html', {'form': form})
 
 def evaluation_form(request):
         return render(request, 'evaluation_form.html')
