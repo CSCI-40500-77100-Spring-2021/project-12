@@ -1,3 +1,5 @@
+![Update main.yml](https://github.com/CSCI-40500-77100-Spring-2021/project-12/actions/workflows/main.yml/badge.svg)
+
 ## Conveniote
 
 Group Members: Samuel Khong (samdundun), Rachel Tan (RachelTan07 / raycheli, Manal Zneit (mZneit)
